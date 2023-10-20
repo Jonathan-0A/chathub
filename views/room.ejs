@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="eng">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>ChatHub</title>
+        <link rel="stylesheet" href="/css/room.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&family=Sanchez&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link rel="icon" type="image/x-icon" href="chat.png">
+    </head>
+    <body>
+            <div class="container">
+                <div class="user-window" id="UserWindow">
+                    <div class="users-head">
+                        <h3><i class="bi bi-people-fill"></i> Active Users</h3>
+                        <h4 class="users-count">0</h4>
+                    </div>
+                    <div class="users-list">
+                        <!-- <div>Jarvis</div> -->
+                    </div>
+                </div>
+                <div class="chat-window">
+                    <div class="chat-head">
+                        <div class="left">
+                            <div id="typing-indicator"></div>
+                        </div>
+                        <div class="right" id="time"></div>
+                    </div>
+                    <div class="chats">
+                        <!-- <div class="user-join">
+                            <p>Jarvis joined the chat</p>
+                        </div>
+                        <div class="message incoming">
+                            <h5>Jarvis</h5>
+                            <p>Hello guys</p>
+                        </div>
+                        <div class="message outgoing">
+                            <h5>Chitti</h5>
+                            <p>Hi guys</p>
+                        </div> -->
+
+                        <emoji-picker></emoji-picker>
+                    </div>
+                    <!-- <div id="typing-indicator"></div> -->
+                    <form class="user-input">
+                        <button type="button" class="btn" id="list">
+                            <i class="bi bi-person-lines-fill"></i>
+                        </button>
+                        <button type="button" class="btn" id="emoji-btn">
+                            <i class="bi bi-emoji-smile-fill"></i>
+                        </button>
+                        <input id="user-msg" type="text" name="" placeholder="Type your message..." autofocus>
+                        <button id="user-send" type="submit" class="btn"><i class="bi bi-send"></i></button>
+                    </form>
+                </div>
+            </div>
+
+        <script defer src="/js/script.js"></script>
+        <script defer type="" src="/socket.io/socket.io.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js" integrity="sha512-zoJXRvW2gC8Z0Xo3lBbao5+AS3g6YWr5ztKqaicua11xHo+AvE1b0lT9ODgrHTmNUxeCw0Ry4BGRYZfXu70weg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+        <script defer type="" src="/js/client.js"></script>
+        <script type="text/javascript">
+            const ROOMID = "<%=roomId%>";
+            const USERID = "<%=userId%>";
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>ChatHub : Join</title>
+		<link rel="stylesheet" href="/css/index.css">
+		<link rel="icon" type="image/x-icon" href="chat.png">
+	</head>
+	<body>
+		<form class="container">
+			<input id="name" type="text" name="name" placeholder="Enter your name to join" required>
+			<input id="email" type="email" name="email" placeholder="Enter your email">
+			<input id="pass" type="password" name="password" placeholder="Enter the password" required>
+			<button type="button" class="create-room" onClick="createRoom()">Join to Chat</button>
+		</form>
+
+		<script defer src="/js/script.js"></script>
+		<!-- <script defer src="/js/client.js"></script> -->
+		<script defer src="/socket.io/socket.io.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js" integrity="sha512-zoJXRvW2gC8Z0Xo3lBbao5+AS3g6YWr5ztKqaicua11xHo+AvE1b0lT9ODgrHTmNUxeCw0Ry4BGRYZfXu70weg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script>
+			function createRoom() {
+				let pass = document.getElementById('pass').value;
+				if(pass == 10011001) {
+					const origin = 	window.location.origin;
+					window.location = `${origin}/room`;
+				}
+			}
+		</script>
+	</body>
+</html>
